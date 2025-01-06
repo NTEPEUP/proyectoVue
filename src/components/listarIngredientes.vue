@@ -51,7 +51,7 @@
 
                                         <router-link :to="{name:'editarIngredientes',params:{ID_ingrediente:ingrediente.ID_ingrediente}}" class="btn btn-primary">Editar</router-link>
                                        
-                                        <button type="button" v-on:click="borrarEmpleado(ingrediente.ID_ingrediente)" class="btn btn-danger">Eliminar</button>
+                                        <button type="button" v-on:click="borrarRegistro(ingrediente.ID_ingrediente)" class="btn btn-danger">Eliminar</button>
                                         
                                     </div>
 
@@ -102,7 +102,7 @@ export default {
 
     created:function(){
 
-        this.consultarEmpleados();
+        this.consultarRegistro();
 
 
     },
@@ -110,7 +110,7 @@ export default {
     methods:{
 
 
-        consultarEmpleados(){
+        consultarRegistro(){
 
             fetch('http://localhost/ingrediente.php')
             .then(respuesta=>respuesta.json())
@@ -128,7 +128,7 @@ export default {
 
             .catch(console.log)
         },
-        borrarEmpleado(ID_ingrediente){
+        borrarRegistro(ID_ingrediente){
 
             fetch('http://localhost/ingrediente.php/?borrar='+ID_ingrediente)
             .then(respuesta=>respuesta.json())

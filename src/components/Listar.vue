@@ -53,7 +53,7 @@
 
                                         <router-link :to="{name:'Editar',params:{ID_pastel:pastel.ID_pastel}}" class="btn btn-primary">Editar</router-link>
                                        
-                                        <button type="button" v-on:click="borrarEmpleado(pastel.ID_pastel)" class="btn btn-danger">Eliminar</button>
+                                        <button type="button" v-on:click="borrarRegistro(pastel.ID_pastel)" class="btn btn-danger">Eliminar</button>
                                         
                                     </div>
 
@@ -104,7 +104,7 @@ export default {
 
     created:function(){
 
-        this.consultarEmpleados();
+        this.consultarRegistros();
 
 
     },
@@ -112,7 +112,7 @@ export default {
     methods:{
 
 
-        consultarEmpleados(){
+        consultarRegistros(){
 
             fetch('http://localhost/index.php')
             .then(respuesta=>respuesta.json())
@@ -130,7 +130,7 @@ export default {
 
             .catch(console.log)
         },
-        borrarEmpleado(ID_pastel){
+        borrarRegistro(ID_pastel){
 
             fetch('http://localhost/index.php/?borrar='+ID_pastel)
             .then(respuesta=>respuesta.json())
@@ -146,15 +146,7 @@ export default {
 
             console.log(ID_pastel);
         },
-        obtenerDetalles() {
-      const ID_pastel = this.$route.params.ID_pastel;
-      fetch(`http://localhost/index.php/?verDetalles=${ID_pastel}`)
-        .then((respuesta) => respuesta.json())
-        .then((datos) => {
-          this.pastel = datos;
-        })
-        .catch((error) => console.error("Error al obtener los detalles:", error));
-    }
+        
 
 
 

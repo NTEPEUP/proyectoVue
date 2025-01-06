@@ -9,12 +9,12 @@ import HelloWorld from './components/HelloWorld.vue'
       <HelloWorld msg="Bienvenido al sistema de pastelería!!!" />
 
       <nav>
-        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/">HOME</RouterLink>
         <RouterLink to="/reporte">REPORTE</RouterLink>
 
         
         <router-link to="/listar">PASTEL</router-link>
-        <router-link to="/pastel_ingrediente">pureba</router-link>
+        <router-link to="/pastel_ingrediente">AGREGAR INGREDIENTES A PASTEL</router-link>
         <router-link to="/listaringredientes">INGREDIENTES</router-link>
        
       </nav>
