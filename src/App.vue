@@ -5,15 +5,24 @@ import HelloWorld from './components/HelloWorld.vue'
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      <HelloWorld msg="Bienvenido al sistema de pastelería!!!" />
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/reporte">REPORTE</RouterLink>
+
+        
+        <router-link to="/listar">PASTEL</router-link>
+        <router-link to="/pastel_ingrediente">pureba</router-link>
+        <router-link to="/listaringredientes">INGREDIENTES</router-link>
+       
       </nav>
+      <div class="container">
+    <img alt="Vue logo" class="logo animated" src="@/assets/p.png" width="600" height="400" />
+  </div>
+
+    
     </div>
   </header>
 
@@ -81,5 +90,44 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
   }
+
+  .container {
+  position: relative;
+  width: 800px;
+  height: 600px;
+  border: 1px solid transparent; /* El borde es invisible */
+  overflow: hidden;
+}
+
+
+.logo {
+  position: absolute;
+}
+
+.animated {
+  animation: moveAround 20s infinite;
+}
+
+@keyframes moveAround {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  25% {
+    top: 0;
+    left: calc(100% - 100px); /* Resta el ancho de la imagen */
+  }
+  50% {
+    top: calc(100% - 100px); /* Resta la altura de la imagen */
+    left: calc(100% - 100px);
+  }
+  75% {
+    top: calc(100% - 100px);
+    left: 0;
+  }
+  100% {
+    top: 0;
+    left: 0;
+  }}
 }
 </style>
