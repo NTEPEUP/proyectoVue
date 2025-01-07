@@ -29,7 +29,7 @@ if (isset($_GET["borrar"])){
     }
     else{  echo json_encode(["success"=>0]); }
 }
-//Inserta un nuevo registro y recepciona en método post los datos de nombre y correo
+//Inserta un nuevo registro y recepciona en método post los datos 
 if (isset($_GET["insertar"])) {
     // Decodificar los datos enviados desde Vue
     $data = json_decode(file_get_contents("php://input"));
@@ -63,7 +63,7 @@ if (isset($_GET["insertar"])) {
     exit();
 }
 
-// Actualiza datos pero recepciona datos de nombre, correo y una clave para realizar la actualización
+// Actualiza datos pero recepciona datos 
 if (isset($_GET["actualizar"])) {
     $data = json_decode(file_get_contents("php://input"));
 
@@ -96,7 +96,7 @@ if (isset($_GET["actualizar"])) {
     exit();
 }
 
-// Consulta todos los registros de la tabla empleados
+// Consulta todos los registros de la tabla
 $sqlPasteles = mysqli_query($conexionBD,"SELECT * FROM ingrediente");
 if(mysqli_num_rows($sqlPasteles) > 0){
     $pasteles = mysqli_fetch_all($sqlPasteles,MYSQLI_ASSOC);
